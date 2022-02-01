@@ -7,33 +7,5 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!--
-    <bean id="testBean"
-          class="ua.edu.chpt.TestBean">
-        <constructor-arg value="Alex"/>
-    </bean>
-    -->
-
-    <context:property-placeholder location="classpath:musicPlayer.properties" />
-
-    <bean id="musicBean"
-          class="ua.edu.chpt.ClassicalMusic"
-          init-method="doMyInit"
-          destroy-method="doMyDestroy">
-    </bean>
-
-    <!--
-    <bean id="musicPlayer"
-            class="ua.edu.chpt.MusicPlayer"
-            scope="prototype">
-         <constructor-arg ref="musicBean"/>
-        <property name="music" ref="musicBean" />
-
-        <property name="name" value="Some name" />
-        <property name="volume" value="50" />
-
-        <property name="name" value="${musicPlayer.name}" />
-        <property name="volume" value="${musicPlayer.volume}" />
-    </bean>
-    -->
+    <context:component-scan base-package="ua.edu.chpt"/>
 </beans>
